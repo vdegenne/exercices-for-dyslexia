@@ -1,0 +1,31 @@
+{
+  "name": "exercice-for-dyslexia",
+  "type": "module",
+  "devDependencies": {
+    "@material/mwc-button": "^0.27.0",
+    "@material/mwc-checkbox": "^0.27.0",
+    "@material/mwc-dialog": "^0.27.0",
+    "@material/mwc-icon-button": "^0.27.0",
+    "@material/mwc-select": "^0.27.0",
+    "@material/mwc-slider": "^0.27.0",
+    "@material/mwc-snackbar": "^0.27.0",
+    "@material/mwc-tab-bar": "^0.27.0",
+    "@material/mwc-textarea": "^0.27.0",
+    "@material/mwc-textfield": "^0.27.0",
+    "@rollup/plugin-json": "^5.0.2",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-terser": "^0.1.0",
+    "@rollup/plugin-typescript": "^10.0.1",
+    "browser-sync": "^2.27.10",
+    "lit": "^2.4.1",
+    "rollup": "^3.6.0",
+    "typescript": "^4.9.3"
+  },
+  "scripts": {
+    "build": "rollup -c --environment minify",
+    "watch": "rollup -cw",
+    "watch:server": "pm2 start pm2.config.js",
+    "browser-sync:static": "browser-sync docs --files docs/app.js --no-notify",
+    "browser-sync": "browser-sync start --proxy http://localhost:3100/ --files docs/app.js --no-notify"
+  }
+}
