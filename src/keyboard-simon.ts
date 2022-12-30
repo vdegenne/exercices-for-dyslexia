@@ -69,9 +69,9 @@ export class KeyboardSimon extends LitElement {
     <mwc-slider label="speed"
       discrete
       withTickMarks
-      min="0.5"
+      min="0.25"
       max="${this.maxWait}"
-      step="0.5"
+      step="0.25"
       value="${this.speed}"
       @change=${(e) => { this.speed = e.detail.value }}
     >
@@ -136,6 +136,7 @@ export class KeyboardSimon extends LitElement {
   async readTheLine () {
     for (const letter of this.line) {
       playLetter(letter)
+      await sleep(500)
       await sleep((this.maxWait - this.speed) * 1000)
     }
   }
